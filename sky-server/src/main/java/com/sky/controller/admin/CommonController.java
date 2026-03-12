@@ -1,5 +1,6 @@
 package com.sky.controller.admin;
 
+import com.sky.constant.MessageConstant;
 import com.sky.result.Result;
 import com.sky.utils.AliOssUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -38,6 +39,6 @@ public class CommonController {
         } catch (IOException e) {
             log.error("文件上传失败：{}",e);
         }
-        return Result.error("文件上传失败");
+        return Result.error(MessageConstant.UPLOAD_FAILED);
     }
 }
