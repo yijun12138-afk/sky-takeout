@@ -75,6 +75,7 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
      * 扩展消息转换器，将String类型转换成json
      * @param converters
      */
+    
     @Override
     protected void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
         MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter();

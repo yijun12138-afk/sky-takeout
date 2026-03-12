@@ -7,9 +7,10 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-//自定义注解
-@Target(ElementType.METHOD)
+//自定义注解,用于标识需要自动填充的操作类型
+@Target(ElementType.METHOD)//注解只能加在方法上
 @Retention(RetentionPolicy.RUNTIME)
 public @interface AutoFill {
+    //数据库操作类型，UPDATE,INSERT
     OperationType value();
 }
