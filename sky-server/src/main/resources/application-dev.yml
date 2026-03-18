@@ -11,3 +11,6 @@ sky:
     access-key-id: ${ALIYUN_OSS_ACCESS_KEY_ID:placeholder}
     access-key-secret: ${ALIYUN_OSS_ACCESS_KEY_SECRET:placeholder}
     bucket-name: changing-java
+  redis:
+    host: localhost
+    port: 6379
