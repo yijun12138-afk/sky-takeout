@@ -20,19 +20,21 @@ public class SetmealController {
     @Autowired
     private SetmealService setmealService;
 
-    /*
-      新增套餐
-      @param setmealDto
+    /**
+     * 新增套餐
+     *
+     * @param setmealDTO
      * @return
      */
     @PostMapping
-    public Result save(@RequestBody SetmealDTO setmealDTO){
+    public Result save(@RequestBody SetmealDTO setmealDTO) {
         setmealService.saveWithDish(setmealDTO);
         return Result.success();
     }
 
     /**
      * 分页查询
+     *
      * @param setmealPageQueryDTO
      * @return
      */
@@ -44,11 +46,12 @@ public class SetmealController {
 
     /**
      * 批量删除套餐
+     *
      * @param ids
      * @return
      */
     @DeleteMapping
-    public Result delete(@RequestParam List<Long> ids){
+    public Result delete(@RequestParam List<Long> ids) {
         setmealService.deleteBatch(ids);
         return Result.success();
     }
@@ -79,6 +82,7 @@ public class SetmealController {
 
     /**
      * 套餐起售停售
+     *
      * @param status
      * @param id
      * @return
