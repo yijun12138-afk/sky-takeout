@@ -1,6 +1,7 @@
 package com.sky.service;
 
 import com.sky.dto.*;
+import com.sky.result.PageResult;
 import com.sky.vo.*;
 
 public interface OrderService {
@@ -25,4 +26,5 @@ public interface OrderService {
      */
     void paySuccess(String outTradeNo);
 
+    PageResult pageQuery4User(int page, int pageSize, Integer status);
 }
