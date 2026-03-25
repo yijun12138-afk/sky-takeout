@@ -1,14 +1,28 @@
 package com.sky.service;
 
-import com.sky.dto.OrdersSubmitDTO;
-import com.sky.vo.OrderSubmitVO;
+import com.sky.dto.*;
+import com.sky.vo.*;
 
 public interface OrderService {
 
-	/**
-	 * 提交订单。
-	 * 这里返回的是后端生成的下单结果，而不是前端提交的请求数据，
-	 * 支付页会依赖返回值中的订单金额和下单时间做展示与倒计时。
-	 */
-	OrderSubmitVO submitOrder(OrdersSubmitDTO ordersSubmitDTO);
+    /**
+     * 用户下单
+     * @param ordersSubmitDTO
+     * @return
+     */
+    OrderSubmitVO submitOrder(OrdersSubmitDTO ordersSubmitDTO);
+
+    /**
+     * 订单支付
+     * @param ordersPaymentDTO
+     * @return
+     */
+    OrderPaymentVO payment(OrdersPaymentDTO ordersPaymentDTO) throws Exception;
+
+    /**
+     * 支付成功，修改订单状态
+     * @param outTradeNo
+     */
+    void paySuccess(String outTradeNo);
+
 }
