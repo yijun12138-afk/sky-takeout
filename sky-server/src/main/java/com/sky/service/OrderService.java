@@ -51,4 +51,8 @@ public interface OrderService {
      * @return
      */
     OrderStatisticsVO statistics();
+
+    void confirm(OrdersConfirmDTO ordersConfirmDTO);
+
+    void rejection(OrdersRejectionDTO ordersRejectionDTO) throws Exception;
 }
